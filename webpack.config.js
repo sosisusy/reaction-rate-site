@@ -1,37 +1,41 @@
-const path = require('path');
+const path = require("path");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
     mode: process.env.WEBPACK_ENV == "production" ? "production" : "development",
     entry: {
-        "js/index": "./src/index.js",
+        index: "./src/index.js",
     },
     output: {
-        filename: '[name].js',
+        filename: "[name].bundle.js",
         path: __dirname + "/dist",
     },
     module: {
         rules: [
             {
                 test: /\.css$/,
-                use: ['style-loader', 'css-loader']
+                use: ["style-loader", "css-loader"],
             },
             {
                 test: /\.(sass|scss)$/,
-                use: ["css-loader", "sass-loader",]
-            }
-        ]
+                use: ["css-loader", "sass-loader"],
+            },
+            {
+                test: /\.js$/,
+                exclude: /node_module/,
+                use: ["babel-loader"],
+            },
+        ],
     },
     plugins: [
         new CleanWebpackPlugin({
-            cleanAfterEveryBuildPatterns: ['dist']
+            cleanAfterEveryBuildPatterns: ["dist"],
         }),
         new HtmlWebpackPlugin({
             title: "hello",
             filename: "index.html",
-            template: "./src/html/index.html"
+            template: "./src/html/index.html",
         }),
     ],
     devServer: {
@@ -39,6 +43,13 @@ module.exports = {
         inline: true,
         hot: true,
         host: "localhost",
-        port: "8080"
-    }
-}
+        port: "8080",
+    },
+    resolve: {
+        alias: {
+            src: path.resolve("./src"),
+            pages: path.resolve("./src/pages"),
+            components: path.resolve("./src/components"),
+        },
+    },
+};
