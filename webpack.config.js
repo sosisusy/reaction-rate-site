@@ -10,6 +10,7 @@ module.exports = {
     output: {
         filename: "[name].bundle.js",
         path: __dirname + "/dist",
+        publicPath: "/",
     },
     module: {
         rules: [
@@ -19,7 +20,7 @@ module.exports = {
             },
             {
                 test: /\.(sass|scss)$/,
-                use: ["css-loader", "sass-loader"],
+                use: ["style-loader", "css-loader", "sass-loader"],
             },
             {
                 test: /\.js$/,
@@ -44,12 +45,15 @@ module.exports = {
         hot: true,
         host: "localhost",
         port: "8080",
+        historyApiFallback: true,
     },
     resolve: {
         alias: {
             src: path.resolve("./src"),
             pages: path.resolve("./src/pages"),
             components: path.resolve("./src/components"),
+            layout: path.resolve("./src/layout"),
+            sass: path.resolve("./src/sass"),
         },
     },
 };
