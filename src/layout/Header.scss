@@ -1,6 +1,61 @@
+@import "sass/utils.scss";
+
 .header {
-    grid-column-start: 1;
-    grid-column-end: 4;
-    background-color: green;
-    height: 60px;
+    width:100%;
+    height:80px;
+    background:white;
+    border-bottom:1px solid #e6e6e6;
+
+    .header__container{
+        display:flex;
+        align-items: center;
+        justify-content: start;
+        height:100%;
+        max-width:1000px;
+        margin: 0 auto 0 auto;
+        
+        .logo{
+            color: black;
+            display: flex;
+            align-items: center;
+            width:250px;
+            height:100%;
+            cursor:pointer;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            outline:none;
+            font-size:1.3em;
+
+        }
+
+        .nav{
+            width:auto;
+            margin-left:auto;
+
+            .nav-list{
+                
+                li{
+                    display:inline-block;
+                    
+                    a{
+                        color: slateblue;
+                        font-size: 1.1em;
+                        font-weight: 900;
+                        cursor:pointer;
+                        letter-spacing: 3px;
+                        text-transform: uppercase;
+                        outline:none;
+                        
+                        &:active{
+                            color:orange;
+                        }
+                    }
+                    
+                    & + li{
+                        margin-left:30px;
+                    }
+                }
+            }
+        }
+    }
 }

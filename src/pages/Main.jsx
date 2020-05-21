@@ -1,8 +1,11 @@
 import React from "react";
 
-const Main = () => (
+import ReactionContainer from "components/reaction/ReactionContainer"
+
+const Main = ({ match }) => (
     <section className="main__section">
         <div>main</div>
+        <ReactionContainer />
     </section>
 );
 

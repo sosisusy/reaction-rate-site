@@ -10,7 +10,9 @@ function App() {
         <div className="wrap">
             <Router>
                 <Header />
-                <Routes />
+                <section className="wrap__content">
+                    <Routes />
+                </section>
             </Router>
         </div>
     );

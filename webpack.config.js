@@ -5,13 +5,14 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
     mode: process.env.WEBPACK_ENV == "production" ? "production" : "development",
     entry: {
-        index: "./src/index.js",
+        index: "./src/index.jsx",
     },
     output: {
         filename: "[name].bundle.js",
         path: __dirname + "/dist",
         publicPath: "/",
     },
+    devtool: "inline-source-map",
     module: {
         rules: [
             {
@@ -23,7 +24,7 @@ module.exports = {
                 use: ["style-loader", "css-loader", "sass-loader"],
             },
             {
-                test: /\.js$/,
+                test: /\.(js|jsx)$/,
                 exclude: /node_module/,
                 use: ["babel-loader"],
             },
@@ -55,5 +56,6 @@ module.exports = {
             layout: path.resolve("./src/layout"),
             sass: path.resolve("./src/sass"),
         },
+        extensions: ['.js', '.jsx'],
     },
 };
