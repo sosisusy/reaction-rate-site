@@ -1,0 +1,17 @@
+.reaction-table-container{
+
+    .reaction-table{
+        display:inline-block;
+        width:100%;
+        max-width:700px;
+        margin-top:5px;
+        
+        > .item{
+            display:inline-block;
+            width:100px;
+            padding:5px;
+            border:1px solid #ececec;
+            text-align:center;
+        }
+    }
+}

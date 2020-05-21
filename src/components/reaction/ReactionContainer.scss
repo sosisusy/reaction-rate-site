@@ -1,0 +1,40 @@
+
+.reaction-container{
+    width:100%;
+    max-width:700px;
+    height:300px;
+    color:#ececec;
+    font-weight:400;
+    font-family: sans-serif;
+
+    > .content{
+        position: relative;
+        background-color:rgba($color: #7390fb, $alpha: 1.0);
+        height:100%;
+
+        &.ready{
+            background-color:rgba($color: #fe6277, $alpha: 1.0)
+        }
+        &.start{
+            background-color:rgba($color: #3bf887, $alpha: 1.0)
+        }
+
+        > *{
+            position: absolute;
+        }
+
+        > .text{
+            text-align:center;
+            left:50%;
+            top:50%;
+            transform: translate(-50%, -50%);
+            font-size:20px;
+        }
+        
+        > .count{
+            right:5px;
+            top:5px;
+            font-size:14px;
+        }
+    }
+}

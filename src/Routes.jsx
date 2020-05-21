@@ -8,6 +8,5 @@ export default () => (
     <div>
         <Route exact path="/" component={Main} />
         <Route path="/chart" component={Chart} />
-        {/* <Route path="/chart/main" component={Main} /> */}
     </div>
 );

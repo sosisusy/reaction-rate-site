@@ -6,12 +6,11 @@ import "layout/Header.scss";
 const Header = () => (
     <section className="header">
         <div className="header__container">
-            <NavLink to="/" className="logo">
+            <NavLink to="/" className="logo" >
                 <div className="text">Reaction TEST</div>
             </NavLink>
             <nav className="nav">
                 <ul className="nav-list">
-                    <li><NavLink to="/">MainTest</NavLink></li>
                     <li><NavLink to="/chart">Chart</NavLink></li>
                 </ul>
             </nav>
