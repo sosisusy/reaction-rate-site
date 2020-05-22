@@ -35,7 +35,6 @@ module.exports = {
             cleanAfterEveryBuildPatterns: ["dist"],
         }),
         new HtmlWebpackPlugin({
-            title: "hello",
             filename: "index.html",
             template: "./src/html/index.html",
         }),

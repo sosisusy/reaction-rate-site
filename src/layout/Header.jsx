@@ -11,7 +11,7 @@ const Header = () => (
             </NavLink>
             <nav className="nav">
                 <ul className="nav-list">
-                    <li><NavLink to="/chart">Chart</NavLink></li>
+                    {/* <li><NavLink to="/chart">Chart</NavLink></li> */}
                 </ul>
             </nav>
         </div>

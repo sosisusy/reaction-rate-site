@@ -70,7 +70,7 @@ class ReactionContainer extends Component {
 
     // 준비 ~ 시작
     gamestart() {
-        let showTimer = Math.floor((Math.random() * 3 + 2) * 1000);
+        let showTimer = Math.floor((Math.random() * 3 + 1) * 1000);
 
         this.showTimer = setTimeout(() => {
             this.timerStart()

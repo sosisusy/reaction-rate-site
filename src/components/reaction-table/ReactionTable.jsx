@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ReactionTable = (children) => {
+const ReactionTable = ({ children }) => {
     return (
         <div className="reaction-table">
             {children}
