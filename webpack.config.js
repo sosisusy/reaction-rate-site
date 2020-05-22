@@ -31,20 +31,19 @@ module.exports = {
         ],
     },
     plugins: [
-        new CleanWebpackPlugin({
-            cleanAfterEveryBuildPatterns: ["dist"],
-        }),
+        new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
             filename: "index.html",
             template: "./src/html/index.html",
         }),
     ],
     devServer: {
-        contentBase: __dirname + "/dist/",
         inline: true,
         hot: true,
         host: "localhost",
         port: "8080",
+        overlay: true,
+        stats: "errors-only",
         historyApiFallback: true,
     },
     resolve: {

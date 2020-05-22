@@ -10,7 +10,7 @@ class Main extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            data: [232, 424, 55, 342, 432, 212],
+            data: [],
         }
     }
 
