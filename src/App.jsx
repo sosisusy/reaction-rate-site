@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Routes from "src/Routes";
-import { BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router, HashRouter } from "react-router-dom";
 import "./App.scss";
 
 import Header from "layout/Header";
@@ -10,12 +10,12 @@ class App extends Component {
     render() {
         return (
             <div className="wrap">
-                <Router basename={process.env.REACT_APP_PUBLIC_URL}>
+                <HashRouter>
                     <Header />
                     <section className="wrap__content">
                         <Routes />
                     </section>
-                </Router>
+                </HashRouter>
             </div>
         );
     }
