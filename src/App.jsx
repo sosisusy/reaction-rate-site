@@ -10,7 +10,7 @@ class App extends Component {
     render() {
         return (
             <div className="wrap">
-                <Router basename={process.env.PUBLIC_URL}>
+                <Router basename={process.env.REACT_APP_PUBLIC_URL}>
                     <Header />
                     <section className="wrap__content">
                         <Routes />

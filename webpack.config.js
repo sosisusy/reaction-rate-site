@@ -1,6 +1,7 @@
 const path = require("path");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const Dotenv = require("dotenv-webpack")
 
 module.exports = {
     mode: process.env.WEBPACK_ENV == "production" ? "production" : "development",
@@ -36,6 +37,7 @@ module.exports = {
             filename: "index.html",
             template: "./src/html/index.html",
         }),
+        new Dotenv(),
     ],
     devServer: {
         inline: true,
