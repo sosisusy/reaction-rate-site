@@ -10,7 +10,7 @@ module.exports = {
     output: {
         filename: "[name].bundle.js",
         path: __dirname + "/docs",
-        publicPath: "/",
+        // publicPath: "./",
     },
     devtool: "inline-source-map",
     module: {
