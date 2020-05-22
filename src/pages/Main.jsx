@@ -3,14 +3,14 @@ import "./Main.scss"
 
 import ReactionContainer from "components/reaction/ReactionContainer"
 import ReactionTableContainer from "components/reaction-table/ReactionTableContainer"
-import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip } from "recharts";
+import { AreaChart, CartesianGrid, XAxis, YAxis, Tooltip, Area, Label } from "recharts";
 
 class Main extends Component {
 
     constructor(props) {
         super(props)
         this.state = {
-            data: [],
+            data: [232, 424, 55, 342, 432, 212],
         }
     }
 
@@ -43,14 +43,20 @@ class Main extends Component {
             <section className="main__section">
                 <h1 className='title'>반응속도 테스트</h1>
                 <ReactionContainer onSave={(time) => this.dataSaveHandle(time)} />
-                <ReactionTableContainer data={data} />
-                <LineChart width={800} height={200} data={chartData} style={{ marginTop: "10px" }} margin={{ left: -10, right: 10, top: 5 }}>
-                    <Line type="monotone" dataKey="value" stroke="#8884d8" />
+                {/* <ReactionTableContainer data={data} /> */}
+                <AreaChart width={800} height={300} data={chartData} style={{ marginTop: "10px" }} margin={{ left: 0, right: 10, top: 20 }}>
+                    <defs>
+                        <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="5%" stopColor="#71d2f8" stopOpacity={0.6} />
+                            <stop offset="95%" stopColor="#8884d8" stopOpacity={0} />
+                        </linearGradient>
+                    </defs>
+                    <Area type="monotone" dataKey="value" stroke="#71d2f8" fillOpacity={1} fill="url(#colorUv)" />
                     <CartesianGrid stroke="#ccc" strokeDasharray="1 2" />
                     <XAxis dataKey="name" />
                     <YAxis />
                     <Tooltip />
-                </LineChart>
+                </AreaChart>
             </section>
         );
     }
